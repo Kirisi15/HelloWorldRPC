@@ -41,4 +41,38 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.3.7</version>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <wsdlUrls>
+                        <wsdlUrl>http://localhost:8888/ws/hello?wsdl</wsdlUrl>
+                    </wsdlUrls>
+
+                    <packageName>com.helloworldrpc.generated</packageName>
+
+                    <keep>true</keep>
+
+                    <xnocompile>true</xnocompile>
+
+                </configuration>
+
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>
